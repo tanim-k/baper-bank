@@ -10,7 +10,7 @@
 <body>
     <header>
         <h2 class="text-5xl text-center mt-16">Welcome to <span class="text-amber-300 font-semibold">My Bank my money site!</span></h2>
-        <h2 class="text-5xl text-center mt-16">lets get some <span class="text-amber-300 font-semibold">money from my account!</span></h2>
+        <h2 class="text-5xl text-center mt-16">lets get some <span class="text-pink-500 font-semibold">money from my account!</span></h2>
     </header>
     <main class="w-3/4 mx-auto">
         <!-- balance and transaction -->
@@ -18,7 +18,7 @@
             <div class="grid grid-cols-3 gap-4  text-white">
                 <div class="bg-blue-400 p-8 rounded ">
                     <h3 class="text-2xl">deposit</h3>
-                    <h4 class="text-4xl">$00</h4>
+                    <h4 class="text-4xl">$<span id="deposit-total">00</span></h4>
                 </div>
                 <div class="bg-green-400 p-8 rounded ">
                     <h3 class="text-2xl">withdraw</h3>
@@ -34,15 +34,15 @@
     <!-- deposite & withdraw    -->
         <section>
             <div class="grid grid-cols-2 gap-4">
-                <div class="my-4 p-8 rounded mt-6 bg-pink-400 w-3/4">
+                <div class="my-4 p-8 rounded mt-6 bg-pink-400">
                     <h3 class="text-3xl ">please deposit</h3>
                     <div class="my-3">
-                        <input id="deposit-input" class= "border-2 px-3 border-gray-400 rounded w-3/4" type="text" placeholder="add your money">
+                        <input id="deposit-input" class= "border-2 px-3 border-gray-400 rounded w-3/4" type="text" placeholder="$ amount you want to deposit">
                         <button id="deposit-button" class="px-3 block mt-3 text-xl  py-1 mb-2
                         rounded text-white bg-yellow-600 font medium">deposit</button>
                     </div>
                 </div>
-                <div class="my-4 p-8 rounded mt-6 bg-pink-400 w-3/4">
+                <div class="my-4 p-8 rounded mt-6 bg-pink-400">
                     <h3 class="text-3xl ">please withdraw</h3>
                     <div class="my-3">
                         <input id="withdraw-input" class= "border-2 px-3 border-gray-400 rounded w-3/4" type="text" placeholder="$ u want to withdraw">
@@ -53,9 +53,24 @@
             </div>
         </section>
     </main>
+
     <script>
-        document.getElementById('deposit-button');
-        console.log(document.getElementById('deposit-button'));
+// handle deposit button effect ////
+        // 1
+        document.getElementById('deposit-button').addEventListener('click', function(){
+// get the amount deposited//            
+           const depositAmount = document.getElementById('deposit-input').value;
+           console.log(depositAmount);
+        // 2   
+        document.getElementById('deposit-total');
+        document.getElementById('deposit-total').innerText = depositAmount;
+    // clear the deposit input field 
+        document.getElementById('deposit-input').value =  '';
+        
+
+        
+        })
     </script>
+    <script src="js/banking.js"></script>
 </body>
 </html>
