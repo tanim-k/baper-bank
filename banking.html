@@ -22,11 +22,11 @@
                 </div>
                 <div class="bg-green-400 p-8 rounded ">
                     <h3 class="text-2xl">withdraw</h3>
-                    <h4 class="text-4xl">$00</h4>
+                    <h4 class="text-4xl">$<span id="withdraw-total">00</span> </h4>
                 </div>
                 <div class="bg-violet-400 p-8 rounded ">
                     <h3 class="text-2xl">balance</h3>
-                    <h4 class="text-4xl">$50000</h4>
+                    <h4 class="text-4xl">$<span id="balance-total">50000</span></h4>
                 </div>
                 
             </div>
@@ -55,26 +55,7 @@
     </main>
 
     <script>
-// handle deposit button effect ////
-        // 1
-        document.getElementById('deposit-button').addEventListener('click', function(){
-// get the amount deposited// 
-        const depositInput = document.getElementById('deposit-input');
-        const newDepositAmountText = depositInput.value;
-        const newDepositAmount = parseFloat(newDepositAmountText);
-               /*  //  or this way ////>
-            // const NewDepositAmount = depositAmount;    
-        // 2    */
-        document.getElementById('deposit-total');
-        const previousDepositText = document.getElementById('deposit-total').innerText;
-        const previousDepositAmount = parseFloat(previousDepositText);
-        const newDepositTotal = previousDepositAmount + newDepositAmount;
-        document.getElementById('deposit-total').innerText = newDepositTotal;
         
-    // clear the deposit input field 
-        document.getElementById('deposit-input').value = '';
-        
-     })
     </script>
     <script src="js/banking.js"></script>
 </body>
